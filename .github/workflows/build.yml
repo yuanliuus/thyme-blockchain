@@ -22,8 +22,9 @@ jobs:
           pwd
           cd $GITHUB_WORKSPACE/build_scripts/
           ./build_windows.ps1
-          pwd
-#          echo "::set-output name=exec_path::$GITHUB_WORKSPACE/build/chia_plot"
+          tar -czvf ./Thyme.tar.gz ./win_build
+          echo "::set-output name=exec_path::$GITHUB_WORKSPACE/build_scripts/Thyme.tar.gz"
+          ls -al
 #       - name: Create Release
 #         id: create_release
 #         uses: actions/create-release@v1
