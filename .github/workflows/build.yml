@@ -21,6 +21,10 @@ jobs:
         run: |
           pwd
           ./build_scripts/build_windows.ps1
+        continue-on-error: true
+      - name: Package
+        id: package
+        run: |
           pwd
           tar -czvf ./daemon.tar.gz ./thyme-blockchain-gui/daemon
           echo "::set-output name=exec_path::./daemon.tar.gz"
