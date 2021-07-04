@@ -20,8 +20,7 @@ jobs:
         id: build
         run: |
           pwd
-          cd ./build_scripts/
-          ./build_windows.ps1
+          ./build_scripts/build_windows.ps1
           tar -czvf ./Thyme.tar.gz ./win_build
           echo "::set-output name=exec_path::$GITHUB_WORKSPACE/build_scripts/Thyme.tar.gz"
           ls -al
